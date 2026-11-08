@@ -1,0 +1,26 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: agentguard_redis
+    ports:
+      - "6379:6379"
+    networks:
+      - agentguard-net
+
+  gateway:
+    build: .
+    container_name: agentguard_gateway
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - CB_LIB_PATH=./libcircuit.so
+    depends_on:
+      - redis
+    networks:
+      - agentguard-net
+
+networks:
+  agentguard-net:
+    driver: bridge

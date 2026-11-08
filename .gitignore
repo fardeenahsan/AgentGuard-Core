@@ -1,0 +1,16 @@
+# Python & C++ Build Artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.dll
+*.exe
+*.o
+
+# Docker
+.docker/
+
+# IDEs
+.vscode/
+.idea/
+.DS_Store
