@@ -1,4 +1,4 @@
-﻿# agentguard-core
+﻿# AgentGuard-Core
 
 A high-performance, multi-language resilience middleware and control plane for autonomous AI agents. Designed to sit between agent orchestration frameworks and downstream tools, preventing cascading failures, unbounded API costs, and race conditions under heavy concurrent load.
 
@@ -8,7 +8,7 @@ A high-performance, multi-language resilience middleware and control plane for a
 
 Autonomous agents frequently trigger unconstrained tool calls (database queries, external REST APIs, LLM sub-invocations). Without proper backpressure, a single failing downstream dependency can cause resource exhaustion across the entire cluster. 
 
-`agentguard-core` provides a low-overhead proxy layer enforcing two core safety invariants:
+`AgentGuard-Core` provides a low-overhead proxy layer enforcing two core safety invariants:
 1. **Atomic Rate Limiting** to control token consumption and throughput per agent.
 2. **Circuit Breaking** to fast-fail traffic during downstream degradation without incurring garbage collection or interpreter lock overhead.
 
